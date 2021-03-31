@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLineEdit, QLabel, QGridLayout
-from PyQt5.QtCore import Qt, pyqtSlot
-
+from PyQt5.QtCore import Qt, pyqtSlot, QSize
+from PyQt5.QtGui import QIcon
 
 class Window(QWidget):
     def __init__(self):
@@ -13,7 +13,10 @@ class Window(QWidget):
 
         addButton = QPushButton('+', self)
         addButton.clicked.connect(self.add)
-        grid.addWidget(addButton, 0, 1)
+        #grid.addWidget(addButton, 0, 1)
+        addButton.setGeometry(200, 150, 100, 300)
+        addButton.SetIconSize(QSize(100,100))
+        addButton.setIcon(QIcon('logo.png'))
 
         subButton = QPushButton('-', self)
         subButton.clicked.connect(self.sub)
